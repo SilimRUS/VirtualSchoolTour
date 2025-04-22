@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виртуальный тур по школе</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .title {
+            flex-grow: 1;
+            text-align: center;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .column-2 img {
+            max-width: 300px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            transition: transform 0.3s ease;
+        }
+        .column-2 a:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .column-1 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="https://sch1357uv.mskobr.ru/">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Логотип" class="logo">
+    </a>
+    <h1 class="title">Виртуальный тур по школе</h1>
+</header>
+
+<table>
+    <tr>
+        <td class="column-1">Первый этаж</td>
+        <td class="column-2">
+            <a href="{{ url_for('first_floor') }}">
+                <img src="{{ url_for('static', filename='firstFloor.png') }}" alt="Первый этаж" class="firstFloor">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="column-1">Второй этаж</td>
+        <td class="column-2">
+            <a href="{{ url_for('second_floor') }}">
+                <img src="{{ url_for('static', filename='second-floor.jpg') }}" alt="Второй этаж" class="secondFloor">
+            </a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
