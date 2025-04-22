@@ -11,6 +11,14 @@ def index():
 def first_flour():
     return render_template('first_flour.html')
 
+@app.route('/second_floor')
+def second_floor():
+    return render_template('second_floor.html')
+
+@app.route('/third_floor')
+def third_floor():
+    return render_template('third_floor.html')
+
 @app.route('/static/<path:filename>')
 def serve_static(filename):
     root_dir = os.path.dirname(os.path.abspath(__file__))

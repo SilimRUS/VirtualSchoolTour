@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Третий этаж - Виртуальный тур по школе</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .floor-plan {
+            position: relative;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .floor-plan img {
+            max-width: 100%;
+            height: auto;
+        }
+        .marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .marker:hover {
+            transform: scale(1.2);
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .marker:hover .tooltip {
+            display: block;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .back-button {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('index') }}" class="back-button">Назад</a>
+        <h1>Третий этаж</h1>
+    </header>
+
+    <div class="floor-plan">
+        <img src="{{ url_for('static', filename='third-floor.jpg') }}" alt="План третьего этажа">
+        <!-- Здесь будут маркеры для третьего этажа -->
+    </div>
+
+    <script>
+        function showPanorama(imageName) {
+            // Функция для показа панорамы при клике на маркер
+            window.location.href = `/static/cabinets/${imageName}`;
+        }
+    </script>
+</body>
+</html>

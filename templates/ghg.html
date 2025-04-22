@@ -60,17 +60,25 @@
         <td class="column-1">Первый этаж</td>
         <td class="column-2">
             <a href="{{ url_for('first_flour') }}">
-    <img src="{{ url_for('static', filename='IT-poligon.jpeg') }}" alt="Первый этаж" class="firstFlour">
-</a>
+                <img src="{{ url_for('static', filename='IT-poligon.jpeg') }}" alt="Первый этаж" class="firstFlour">
+            </a>
         </td>
     </tr>
     <tr>
         <td class="column-1">Второй этаж</td>
-        <td class="column-2">Тут будет план</td>
+        <td class="column-2">
+            <a href="{{ url_for('second_floor') }}">
+                <img src="{{ url_for('static', filename='second-floor.jpg') }}" alt="Второй этаж" class="secondFloor">
+            </a>
+        </td>
     </tr>
     <tr>
         <td class="column-1">Третий этаж</td>
-        <td class="column-2">Тут будет план</td>
+        <td class="column-2">
+            <a href="{{ url_for('third_floor') }}">
+                <img src="{{ url_for('static', filename='third-floor.jpg') }}" alt="Третий этаж" class="thirdFloor">
+            </a>
+        </td>
     </tr>
 </table>
 </body>
